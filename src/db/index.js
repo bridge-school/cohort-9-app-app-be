@@ -13,6 +13,7 @@ try {
 }
 
 const db = admin.firestore();
+db.settings({ timestampsInSnapshots: true });
 
 // import the db from any file to access firebase!
 module.exports = db;

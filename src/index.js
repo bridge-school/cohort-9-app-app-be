@@ -22,6 +22,7 @@ app.use(
     origin: `http://${process.env.PROJECT_NAME}-frontend.bridgeschoolapp.io`
   })
 );
+app.use(express.json());
 app.use("/", router);
 app.use(errorHandler);
 
