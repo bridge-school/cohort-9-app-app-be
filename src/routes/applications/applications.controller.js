@@ -7,7 +7,7 @@ const applicationsController =  (req, res) => {
         .get()
         .then(snapshot => {
             res.json({
-                allApps:  snapshot.docs.map(doc => {       
+                cohort_apps:  snapshot.docs.map(doc => {       
                     return {
                         id: doc.id,
                         ...doc.data()
