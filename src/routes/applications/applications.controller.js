@@ -17,12 +17,6 @@ const getAapplicationsController = (req, res) => {
     })
     .catch(err => res.json(err));
 };
-
-module.exports = {
-  getAapplicationsController,
-  postApplicationController
-};
-
 const postApplicationController = (req, res) => {
   db.collection("Applications")
     .add({
@@ -37,6 +31,11 @@ const postApplicationController = (req, res) => {
     .catch(error => {
       res.json({ error });
     });
+};
+
+module.exports = {
+  getAapplicationsController,
+  postApplicationController
 };
 
 // return res.json({
