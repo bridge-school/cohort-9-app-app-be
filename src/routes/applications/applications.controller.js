@@ -1,26 +1,44 @@
-const {logger} = require("../../utils/logger")
-const db = require("../../db/index.js")
+const { logger } = require("../../utils/logger");
+const db = require("../../db/index.js");
 
-const applicationsController =  (req, res) => {
-    // Applications is the name of the collection I created in firebase
-    db.collection("Applications")
-        .get()
-        .then(snapshot => {
-            res.json({
-                allApps:  snapshot.docs.map(doc => {       
-                    return {
-                        id: doc.id,
-                        ...doc.data()
-                    };
-                }) 
-            })
+const getAapplicationsController = (req, res) => {
+  // Applications is the name of the collection I created in firebase
+  db.collection("Applications")
+    .get()
+    .then(snapshot => {
+      res.json({
+        allApps: snapshot.docs.map(doc => {
+          return {
+            id: doc.id,
+            ...doc.data()
+          };
         })
-        .catch(err => res.json(err) )
+      });
+    })
+    .catch(err => res.json(err));
 };
 
 module.exports = {
-    applicationsController
-}
+  getAapplicationsController,
+  postApplicationController
+};
+
+const postApplicationController = (req, res) => {
+  db.collection("Applications")
+    .add({
+      ...req.body
+    })
+    .then(docRef => {
+      res.status(201).json({
+        id: docRef.id,
+        message: "Cohort from successfully created"
+      });
+    })
+    .catch(error => {
+      res.json({ error });
+    });
+};
+
 // return res.json({
-                //     data: snapshot.docs
-                //   });
+//     data: snapshot.docs
+//   });
