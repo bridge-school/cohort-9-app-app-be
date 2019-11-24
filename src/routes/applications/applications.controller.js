@@ -1,7 +1,7 @@
 const { logger } = require("../../utils/logger");
 const db = require("../../db/index.js");
 
-const getAapplicationsController = (req, res) => {
+const getApplicationsController = (req, res) => {
   // Applications is the name of the collection I created in firebase
   db.collection("Applications")
     .get()
@@ -34,7 +34,7 @@ const postApplicationController = (req, res) => {
 };
 
 module.exports = {
-  getAapplicationsController,
+  getApplicationsController,
   postApplicationController
 };
 
