@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 
 const { healthRouter } = require("../routes/health/health.router");

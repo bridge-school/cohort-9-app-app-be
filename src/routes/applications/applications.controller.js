@@ -21,6 +21,3 @@ const applicationsController =  (req, res) => {
 module.exports = {
     applicationsController
 }
-// return res.json({
-                //     data: snapshot.docs
-                //   });
