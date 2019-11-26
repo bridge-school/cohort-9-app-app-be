@@ -2,13 +2,13 @@ const express = require("express");
 
 const {
   getApplicationsController,
-  postApplicationController
+  postApplicationController,
 } = require("./applications.controller");
 
 const router = express.Router();
 
-router.get("", getApplicationsController);
-router.post("", postApplicationController);
+router.get("/", getApplicationsController);
+router.post("/", postApplicationController);
 
 module.exports = {
   applicationsRouter: router
