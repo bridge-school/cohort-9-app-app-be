@@ -19,7 +19,7 @@ logger.info("🤖 Initializing middleware");
 app.use(morgan("tiny", { stream: logger.stream }));
 app.use(
   cors({
-    origin: `http://${process.env.PROJECT_NAME}-frontend.bridgeschoolapp.io`
+    origin: `https://nifty-yonath-7c3e65.netlify.com`
   })
 );
 app.use(express.json());
