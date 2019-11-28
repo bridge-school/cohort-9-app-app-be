@@ -1,8 +1,9 @@
 const admin = require("firebase-admin");
+
 const SERVICE_ACCOUNT = {
   type: process.env.FIREBASE_TYPE,
   project_id: process.env.FIREBASE_PROJECT_ID,
-  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+  private_key: process.env.FIREBASE_PRIVATE_KEY,
   client_email: process.env.FIREBASE_CLIENT_EMAIL,
   client_id: process.env.FIREBASE_CLIENT_ID,
   auth_uri: process.env.FIREBASE_AUTH_URI,
@@ -12,6 +13,7 @@ const SERVICE_ACCOUNT = {
   private_key_id: process.env.FIREBASE_KEY_ID
 };
 // initialize firebase store
+
 try {
   const serviceAccount =
     process.env.NODE_ENV === "development"
