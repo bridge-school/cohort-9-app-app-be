@@ -6,6 +6,7 @@ const getApplicationsController = (req, res) => {
   db.collection("Applications")
     .get()
     .then(snapshot => {
+      console.log("******************");
       res.json({
         cohort_apps: snapshot.docs.map(doc => {
           return {
@@ -15,9 +16,13 @@ const getApplicationsController = (req, res) => {
         })
       });
     })
-    .catch(err => res.json(err));
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    });
 };
-const postApplicationController = (req, res) => {
+
+const postApplicationController = (req, res) => {  
   db.collection("Applications")
     .add({
       ...req.body
@@ -28,8 +33,9 @@ const postApplicationController = (req, res) => {
         message: "Cohort from successfully created"
       });
     })
-    .catch(error => {
-      res.json({ error });
+    .catch(err => {
+      console.log(err);
+      res.json(err);
     });
 };
 
