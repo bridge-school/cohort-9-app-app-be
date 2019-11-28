@@ -1,4 +1,3 @@
-
 const healthController = (req, res) => {
 
   return res.json({
