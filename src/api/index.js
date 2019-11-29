@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.route("/health", healthRouter);
-app.route("/applications", applicationsRouter);
-app.route("/applications/students", studentApplicationsRouter);
+app.get("/health", healthRouter);
+app.get("/applications", applicationsRouter);
+app.get("/applications/students", studentApplicationsRouter);
 module.exports = app;
