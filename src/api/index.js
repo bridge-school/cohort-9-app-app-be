@@ -13,7 +13,10 @@ const app = express();
 // router.use("/<newRoute>", <newRoute>Router);
 app.use(function(req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://nifty-yonath-7c3e65.netlify.com"
+  );
 
   // Request methods you wish to allow
   res.setHeader("Access-Control-Allow-Methods", "*");
