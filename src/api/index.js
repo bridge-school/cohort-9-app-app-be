@@ -35,7 +35,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/health", healthRouter);
-app.get("/applications", applicationsRouter);
-app.get("/applications/students", studentApplicationsRouter);
-module.exports = app;
+const router = express.Router();
+router.use("/health", healthRouter);
+router.use("/applications", applicationsRouter);
+router.use("/applications/students", studentApplicationsRouter);
+module.exports = router;
