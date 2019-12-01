@@ -14,9 +14,12 @@ const SERVICE_ACCOUNT = {
 };
 // initialize firebase store
 
+
+
 try {
   const serviceAccount =
-    process.env.NODE_ENV === "development"
+    // process.env.NODE_ENV === "development"
+    true
       ? require("../../firebase-credentials.json")
       : SERVICE_ACCOUNT;
   admin.initializeApp({
