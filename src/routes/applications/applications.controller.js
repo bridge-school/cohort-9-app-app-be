@@ -64,7 +64,7 @@ const postApplicationController = (req, res) => {
     .then(docRef => {
       res.status(201).json({
         id: docRef.id,
-        message: "Cohort from successfully created"
+        message: "Cohort form successfully created"
       });
     })
     .catch(err => {
