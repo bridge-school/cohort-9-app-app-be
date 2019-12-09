@@ -14,12 +14,9 @@ const SERVICE_ACCOUNT = {
 };
 // initialize firebase store
 
-
-
 try {
   const serviceAccount =
-    // process.env.NODE_ENV === "development"
-    true
+    process.env.NODE_ENV === "development"
       ? require("../../firebase-credentials.json")
       : SERVICE_ACCOUNT;
   admin.initializeApp({
@@ -32,5 +29,6 @@ try {
   );
 }
 const db = admin.firestore();
+db.settings({ timestampsInSnapshots: true });
 // import the db from any file to access firebase!
 module.exports = db;
