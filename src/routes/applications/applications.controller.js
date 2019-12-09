@@ -6,7 +6,7 @@ const getApplicationsController = (req, res) => {
   db.collection("Applications")
     .get()
     .then(snapshot => {
-      console.log("!******************");
+      console.log("******************");
       res.json({
         cohort_apps: snapshot.docs.map(doc => {
           return {
