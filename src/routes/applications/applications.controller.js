@@ -47,7 +47,7 @@ const getApplicationController = (req, res) => {
     console.log("!!!!!!!!!!!");
     // access request route parameters that are part of the path (id) via req.params.id
       const cohort_id = req.params.id
-      res.status(201).json({
+      res.status(200).json({
         cohort: snapshot.docs.map(doc => {
             return {
               id: doc.id,
